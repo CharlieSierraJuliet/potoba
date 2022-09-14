@@ -22,6 +22,12 @@ const Cart = (props) => {
       ))}
     </ul>
   );
+
+  const onPlaceOrder=()=>{
+    return(
+        alert('Order Placed successfully')
+    )
+  }
   return (
     <Modal onClick={props.onCancel}>
       {cartItems}
@@ -31,7 +37,7 @@ const Cart = (props) => {
       </div>
       <div className={classes.actions}>
         <button className={classes["button--alt"]} onClick={props.onCancel}>Cancel</button>
-        {cartCtx.items.length>0 && <button className={classes.button}>Place Order</button>}
+        {cartCtx.items.length>0 && <button className={classes.button} onClick={onPlaceOrder}>Place Order</button>}
       </div>
     </Modal>
   );
